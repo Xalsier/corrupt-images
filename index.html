@@ -1,0 +1,47 @@
+<style>
+.container {
+    display: flex;
+    width: 50vw;
+    justify-content: center; /* Changed for single-image display */
+    align-items: center;
+    margin: 0 auto;
+}
+.container img, .container canvas {
+    width: 50%;
+}
+.image {
+    border: 1px solid black;
+    margin: 10px;
+}
+.controls {
+    gap: 5px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    flex-direction: row ; /* Stack controls vertically */
+    margin-top: 20px;
+    text-align: center;
+}
+</style>
+
+<div class="container">
+    <img src="5.png" alt="Reference Image" class="image" id="refImage">
+    <canvas id="corruptedCanvas" class="image"></canvas>
+</div>
+
+<div class="controls">
+    <label for="numInput">Pieces:</label> 
+    <input type="number" id="numInput" value="3" min="1"> 
+    <button id="refreshButton">Refresh</button> 
+    <select id="modeSelect">
+        <option value="tile" selected>Tile Mode</option>
+        <option value="piece">Piece Mode</option>
+    </select>
+    <button id="downloadButton">Download Image</button>
+    <input type="file" id="imageUpload" accept="image/*" style="display: none;"> 
+    <button id="changeImageButton">Change Image</button>
+
+</div>
+
+<script src="7.js"></script> 
